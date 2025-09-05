@@ -54,16 +54,17 @@ async function loadModels() {
   ]);
 }
 
-// ** UPDATED with new filtering logic **
+// ** UPDATED with a second filter condition **
 function populateDropdown() {
-  identitySelect.innerHTML =
-    '<option value="" disabled selected>--- ជ្រើសរើសអត្តលេខ ---</option>';
-
-  // CHANGED: Filter now checks if column N (index 11) is empty.
-  // The data range C to N means C=0, D=1, E=2, F=3, G=4, H=5, I=6, J=7, K=8, L=9, M=10, N=11.
-  const availableIDs = allRequestsData.filter(
-    (row) => !row[11] || row[11].trim() === ""
-  );
+    identitySelect.innerHTML = '<option value="" disabled selected>--- ជ្រើសរើសអត្តលេខ ---</option>';
+    
+    // Data range is C2:N. Column C=0, D=1, ... I=6, ... N=11.
+    const availableIDs = allRequestsData.filter(row =>
+        // Condition 1: Column I (index 6) must contain the text "អនុញ្ញាត"
+        (row[6] && row[6].trim() === 'អនុញ្ញាត') &&
+        // Condition 2: Column N (index 11) must be empty
+        (!row[11] || row[11].trim() === '')
+    );
 
   if (availableIDs.length === 0) {
     identitySelect.innerHTML =
