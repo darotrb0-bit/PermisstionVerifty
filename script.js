@@ -269,7 +269,7 @@ function closeApplication() {
 async function writeTimeToSheetViaAppsScript(employeeId) {
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
     return alert(
-      "សូមបញ្ចូល APPS_SCRIPT_URL របស់អ្នកក្នុងប្រព័ន្ឌ script.js ជាមុនសិន!"
+      "សូមបញ្ចូល APPS_SCRIPT_URL របស់អ្នកក្នុងប្រព័ន្ឌ script.js ជាមុនសិន!!"
     );
   }
   try {
