@@ -55,7 +55,7 @@ async function loadModels() {
 }
 
 // ** UPDATED with a second filter condition **
-// ** UPDATED with a second filter condition **
+
 function populateDropdown() {
     identitySelect.innerHTML = '<option value="" disabled selected>--- ជ្រើសរើសអត្តលេខ ---</option>';
     
