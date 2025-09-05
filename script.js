@@ -130,7 +130,7 @@ async function handleIdSelection() {
       };
       referencePhotoEl.onerror = () => {
         hideLoader();
-        alert("មានបញ្ហាក្នុងការបង្ហាញរូបថត (Base64)។");
+        alert("មានបញ្ហាក្នុងការបង្ហាញរូបថត! សូមចុចប៊ូតុង 'OK' ហើយរង់ចាំបន្តិច...! (Base64)។");
       };
     } else {
       hideLoader();
@@ -141,10 +141,10 @@ async function handleIdSelection() {
     console.error("Error processing selection:", error);
     if (error.message === "Server Timeout") {
       alert(
-        `Server ใช้เวลาตอบสนองนานเกิน ${
-          FETCH_TIMEOUT / 1000
-        } វិនាទី។ สาเหตุหลักអាចមកពីរូបថតមានទំហំធំពេក។`
-      );
+  `ការឆ្លើយតបពី Server ប្រើពេលយូរពេក (លើសពី ${
+    FETCH_TIMEOUT / 1000
+  } វិនាទី)។\n\nមូលហេតុចម្បងអាចបណ្ដាលមកពីរូបថតមានទំហំធំពេក។`
+);
     } else {
       alert("មានបញ្ហាក្នុងការទាក់ទងទៅកាន់ Apps Script។");
     }
@@ -257,7 +257,7 @@ function closeApplication() {
   document.body.innerHTML = `
         <div class="final-message-container">
           <h1>ដំណើរការបានបញ្ចប់</h1>
-          <p>ការផ្ទៀងផ្ទាត់ និងកត់ត្រាបានជោគជ័យ។</p>
+          <p>ការផ្ទៀងផ្ទាត់បញ្ជាក់វត្តមានចូលមកក្នុងសាលាវិញ បានកត់ត្រាបានជោគជ័យ។</p>
           <p>កម្មវិធីនឹងព្យាយាមបិទដោយស្វ័យប្រវត្តិ។</p>
         </div>
       `;
@@ -269,7 +269,7 @@ function closeApplication() {
 async function writeTimeToSheetViaAppsScript(employeeId) {
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
     return alert(
-      "សូមបញ្ចូល APPS_SCRIPT_URL របស់អ្នកក្នុងไฟล์ script.js ជាមុនសិន!"
+      "សូមបញ្ចូល APPS_SCRIPT_URL របស់អ្នកក្នុងប្រព័ន្ឌ script.js ជាមុនសិន!"
     );
   }
   try {
@@ -281,7 +281,7 @@ async function writeTimeToSheetViaAppsScript(employeeId) {
     });
     const result = await response.json();
     if (result.status === "success") {
-      alert("បានរក្សាទុកម៉ោងចូលเรียบร้อยแล้ว!");
+      alert("បានបញ្ជាក់វត្តមានការចូលមកក្នុងសាលាវិញដោយជោគជ័យ!");
       closeApplication();
     } else {
       throw new Error(result.message);
