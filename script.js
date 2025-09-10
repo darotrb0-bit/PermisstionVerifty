@@ -3,7 +3,7 @@
 // =================================================================================
 const API_KEY = "AIzaSyBcLvey5a-_JdXZqN37tNLUFncQ9j4lulY"; // <--- ដាក់ API Key របស់អ្នក
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwyl-6WxEgEXE3gZF1SmVq1xq1vwecC4xxs_JyBGDnqI1FRffqejA5MrpZ0OR49tFWB2Q/exec"; // <--- ដាក់ Web App URL
+  "https://script.google.com/macros/s/AKfycbzgEwRWDZyIP_Vs-q-w5ctgCQCq-8DPowcuTNfV0H3Ba0dcPQXRXV8S1zeUiZtj8-L_sA/exec"; // <--- ដាក់ Web App URL
 
 const REQUESTS_SHEET_ID = "18oonwPyyU6I0hHX-vucvoYSqGf_S7wPnQX817CqauPE";
 const FETCH_TIMEOUT = 25000; // Timeout in milliseconds (25 seconds)
